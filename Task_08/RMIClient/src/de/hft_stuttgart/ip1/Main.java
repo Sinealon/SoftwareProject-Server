@@ -21,23 +21,38 @@ public class Main {
 
         System.out.println("Starting the Client");
         ReceiverImpl receiver = new ReceiverImpl();
-        String username = null, password = null;
+        String userName = null, password = null;
 
         UnicastRemoteObject.exportObject((Remote) receiver, 0);
+        FileServer authentication = null;
+        try {
 
         Registry registry = LocateRegistry.getRegistry(iP, port);
 
-        FileServer registration = (FileServer) registry.lookup(FileServer.class.getName()); // TBD
-        FileTransfer sender = registration.getTransfer(receiver, password);
-        while ( true ) {
-            Scanner sc = new Scanner(System.in);
-            String line = sc.nextLine();
-            if ( line == null || line.strip().length() == 0 ) {
-                break;
-            }
           //  sender.sendMessage(line);
+            authentication = (FileServer) registry.lookup(FileServer.class.getName());
 
+            FileTransfer status = authentication.getTransfer(userName, password);
+
+            /*
+            while ( true ) {
+                Scanner sc = new Scanner(System.in);
+                String line = sc.nextLine();
+                if (line == null || line.strip().length() == 0) {
+                    break;
+                }
+            }
+            UnicastRemoteObject.unexportObject(receiver, true);
+            */
         }
-        UnicastRemoteObject.unexportObject(receiver, true);
+        catch (RemoteException e) {
+
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        } catch (NotBoundException e) {
+
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        }
     }
 }

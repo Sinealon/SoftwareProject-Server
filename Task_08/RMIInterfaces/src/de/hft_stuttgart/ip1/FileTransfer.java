@@ -8,11 +8,5 @@ public interface FileTransfer extends Remote {
     void sendFile(String name, byte [] data) throws RemoteException;
     byte[] receiveFile(String name) throws RemoteException;
     // Nur für 4-er Gruppen zu implementieren
-    boolean deleteFile(String name) throws RemoteException{
-        boolean deleted = false;
-
-
-
-        return deleted;
-    }
+    boolean deleteFile(String name) throws RemoteException;
 }
