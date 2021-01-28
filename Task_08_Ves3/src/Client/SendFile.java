@@ -1,8 +1,6 @@
 package Client;
 
 import SharedInterface.FileTransfer;
-
-import java.nio.charset.StandardCharsets;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -11,26 +9,26 @@ import java.util.Scanner;
 public class SendFile {
     Scanner in = new Scanner(System.in);
     public SendFile(FileTransfer fileTransfer) {
-        System.out.println("Bitte Namen des zu speichernden Textes angeben: ");
 
-        String name = in.next();
+        System.out.println("Bitte Namen des zu speichernden Textes angeben: ");
+        String name = "";
+        name = in.next();
+
+        in.nextLine();  // Consume newline left-over
+
         System.out.print("Bitte gieb den zu komprimieren und abzuspeichernden Text ein: ");
-        String komprimiren = in.next();
+        String komprimiren = in.nextLine();
+
         String burrowsWheeler = burrowsWheelerTransform(komprimiren);
         short[] moveToFront = moveToFrontTransform(burrowsWheeler);
         byte[] runLength = runLengthTransform(moveToFront);
         byte[] huffmen = HuffmenTransform(runLength);
-
-
-
 
         try {
             fileTransfer.sendFile(name,huffmen);
         } catch (RemoteException e) {
             e.printStackTrace();
         }
-
-
     }
 
     private String burrowsWheelerTransform(String komprimiren) {
@@ -39,6 +37,7 @@ public class SendFile {
         komprimiren = komprimiren + '\uFFED';
         list.add(komprimiren.substring(1)+komprimiren.charAt(0));
         komprimiren = komprimiren.substring(1)+komprimiren.charAt(0);
+
         while(komprimiren.charAt(komprimiren.length()-1) !=  '\uFFED'){
             list.add(komprimiren.substring(1)+komprimiren.charAt(0));
             komprimiren = komprimiren.substring(1)+komprimiren.charAt(0);
@@ -53,17 +52,19 @@ public class SendFile {
         }
 
         return ergebnisTask04;
-
     }
 
 
     private short[] moveToFrontTransform(String komprimiren) {
+
         byte[] input = komprimiren.getBytes();
         var gefundenliste = new LinkedList<Byte>();
         short[] ergebnisAtFront = new short[input.length];
+
         //i = index des zu durschreitenden byte aus input
         index: for(int i = 0;i<input.length;i++){
             short zuverschieben = 0;
+
             // überprüfung ob bereits aufgetreten
             for (short k = 0;k<gefundenliste.size();k++){
                 if(gefundenliste.get(k).byteValue() == input[i]){
@@ -76,6 +77,7 @@ public class SendFile {
                     zuverschieben++;
                 }
             }
+
             //fügt bei nochnicht gefundenen hinzu
             ergebnisAtFront[i] =(short)(input[i]+zuverschieben);
             gefundenliste.addFirst(input[i]);

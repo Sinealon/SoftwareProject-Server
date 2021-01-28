@@ -65,7 +65,7 @@ public class RMIClient {
                         new SendFile(fileTransfer);
                         break;
                     case "3":
-                        //fileTransfer.receiveFile();
+                        new ReceiveFile(fileTransfer);
                         break;
                     case "4":
                         //fileTransfer.deleteFile();
