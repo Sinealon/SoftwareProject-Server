@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e2e8a775-66a9-4de2-a9f6-51dd7220657e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea" beforeDir="true" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/aws.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles" beforeDir="true" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/description.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/project-template.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Task_06.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out" beforeDir="true" />
+      <change beforePath="$PROJECT_DIR$/out/production" beforeDir="true" />
+      <change beforePath="$PROJECT_DIR$/out/production/Task_06" beforeDir="true" />
+      <change beforePath="$PROJECT_DIR$/out/production/Task_06/de" beforeDir="true" />
+      <change beforePath="$PROJECT_DIR$/out/production/Task_06/de/hft_stuttgart" beforeDir="true" />
+      <change beforePath="$PROJECT_DIR$/out/production/Task_06/de/hft_stuttgart/ip1" beforeDir="true" />
+      <change beforePath="$PROJECT_DIR$/out/production/Task_06/de/hft_stuttgart/ip1/HuffmanDistribution.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Task_06/de/hft_stuttgart/ip1/HuffmanEntry.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Task_06/de/hft_stuttgart/ip1/HuffmanTree.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test" beforeDir="true" />
+      <change beforePath="$PROJECT_DIR$/out/test/Task_06" beforeDir="true" />
+      <change beforePath="$PROJECT_DIR$/out/test/Task_06/de" beforeDir="true" />
+      <change beforePath="$PROJECT_DIR$/out/test/Task_06/de/hft_stuttgart" beforeDir="true" />
+      <change beforePath="$PROJECT_DIR$/out/test/Task_06/de/hft_stuttgart/ip1" beforeDir="true" />
+      <change beforePath="$PROJECT_DIR$/out/test/Task_06/de/hft_stuttgart/ip1/HuffmanDistributionTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Task_06/de/hft_stuttgart/ip1/HuffmanEntryTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Task_06/de/hft_stuttgart/ip1/HuffmanTreeTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Task_06/de/hft_stuttgart/ip1/TestHelpers.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Task_06/de/hft_stuttgart/ip1/TestResultLoggerExtension.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Task_06/de/hft_stuttgart/ip1/TestValue.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src" beforeDir="true" />
+      <change beforePath="$PROJECT_DIR$/src/de" beforeDir="true" />
+      <change beforePath="$PROJECT_DIR$/src/de/hft_stuttgart" beforeDir="true" />
+      <change beforePath="$PROJECT_DIR$/src/de/hft_stuttgart/ip1" beforeDir="true" />
+      <change beforePath="$PROJECT_DIR$/src/de/hft_stuttgart/ip1/HuffmanDistribution.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/de/hft_stuttgart/ip1/HuffmanEntry.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/de/hft_stuttgart/ip1/HuffmanTree.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test" beforeDir="true" />
+      <change beforePath="$PROJECT_DIR$/test/de" beforeDir="true" />
+      <change beforePath="$PROJECT_DIR$/test/de/hft_stuttgart" beforeDir="true" />
+      <change beforePath="$PROJECT_DIR$/test/de/hft_stuttgart/ip1" beforeDir="true" />
+      <change beforePath="$PROJECT_DIR$/test/de/hft_stuttgart/ip1/HuffmanDistributionTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/de/hft_stuttgart/ip1/HuffmanEntryTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/de/hft_stuttgart/ip1/HuffmanTreeTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/de/hft_stuttgart/ip1/TestHelpers.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/de/hft_stuttgart/ip1/TestResultLoggerExtension.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/de/hft_stuttgart/ip1/TestValue.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="AnnotationType" />
+      </list>
+    </option>
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="0dm92nog" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA 2020.2.3\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1l9P6i0aUhzXnrU3pSO5nkxJaOq" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+  </component>
+  <component name="RunManager" selected="JUnit.HuffmanTreeTest">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HuffmanTreeTest" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+      <module name="Task_06" />
+      <useClassPathOnly />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.hft_stuttgart.ip1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="de.hft_stuttgart.ip1" />
+      <option name="MAIN_CLASS_NAME" value="de.hft_stuttgart.ip1.HuffmanTreeTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RunMeTest" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+      <module name="Task_06" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.hft_stuttgart.ip1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="de.hft_stuttgart.ip1" />
+      <option name="MAIN_CLASS_NAME" value="de.hft_stuttgart.ip1.RunMeTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration" cleanupOnStartRun="true">
+    <configuration>C:\Users\Peter Heusch\AppData\Roaming\Subversion</configuration>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="SvnFileUrlMappingImpl">
+    <option name="myMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\Users\Peter Heusch\IdeaProjects\Task_06" />
+          <option name="myCopyRoot" value="C:\Users\Peter Heusch\IdeaProjects\Task_06" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+    <option name="myMoreRealMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\Users\Peter Heusch\IdeaProjects\Task_06" />
+          <option name="myCopyRoot" value="C:\Users\Peter Heusch\IdeaProjects\Task_06" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e2e8a775-66a9-4de2-a9f6-51dd7220657e" name="Default Changelist" comment="" />
+      <created>1607006162353</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1607006162353</updated>
+      <workItem from="1607006294178" duration="26000" />
+      <workItem from="1607006342971" duration="984000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607006522209">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.0.1920.1040/0.0.1920.1040/1920.0.1280.1024@0.0.1920.1040" timestamp="1607006522209" />
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1607006672095">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1920.0.1920.1040/0.0.1920.1040/1920.0.1280.1024@0.0.1920.1040" timestamp="1607006672095" />
+    <state width="1921" height="289" key="GridCell.Tab.0.bottom" timestamp="1607006569051">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1921" height="289" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040/1920.0.1280.1024@0.0.1920.1040" timestamp="1607006569051" />
+    <state width="1921" height="289" key="GridCell.Tab.0.center" timestamp="1607006569051">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1921" height="289" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040/1920.0.1280.1024@0.0.1920.1040" timestamp="1607006569051" />
+    <state width="1921" height="289" key="GridCell.Tab.0.left" timestamp="1607006569051">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1921" height="289" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040/1920.0.1280.1024@0.0.1920.1040" timestamp="1607006569051" />
+    <state width="1921" height="289" key="GridCell.Tab.0.right" timestamp="1607006569051">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1921" height="289" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040/1920.0.1280.1024@0.0.1920.1040" timestamp="1607006569051" />
+  </component>
+</project>
