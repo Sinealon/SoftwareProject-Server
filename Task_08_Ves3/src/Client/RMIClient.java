@@ -3,6 +3,7 @@ package Client;
 import SharedInterface.FileServer;
 import SharedInterface.FileTransfer;
 
+import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.rmi.Naming;
 import java.rmi.NotBoundException;
@@ -10,9 +11,7 @@ import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Scanner;
+import java.util.*;
 
 public class RMIClient {
 
@@ -31,21 +30,21 @@ public class RMIClient {
         Registry registry = LocateRegistry.getRegistry(iP, port);
 
         //FileServer vom server laden
+
         FileServer fileServer = (FileServer) registry.lookup(FileServer.class.getName());
 
-
         System.out.println("Bitte Nutzernamen eingeben");
-        //admin /
+        //admin / plain
         String user;
-        user = in.nextLine();
-        user = in.nextLine();
+        user = in.next();
         System.out.println("Bitte Password eingeben");
-        //admin /
-        String password = in.nextLine();
+        //admin / 12345
+        String password = in.next();
 
 
         //FileServer vom server laden
         FileTransfer fileTransfer = fileServer.getTransfer(user,password);
+
         //überprüfung der korektheit der Passwörter;
         if(fileTransfer != null){
             //auswahl der gewünschten tätigkeit
@@ -57,13 +56,13 @@ public class RMIClient {
                         "\n4. Lösche einen gespeicherten Text vom Server" +
                         "\n5. Beende die vorhandene Verbindung und schlist den Client");
 
-                String input = in.nextLine();
+                String input = in.next();
                 switch (input){
                     case "1":
                         //fileTransfer.listFiles();
                         break;
                     case "2":
-                        sendFile(fileTransfer);
+                        new SendFile(fileTransfer);
                         break;
                     case "3":
                         //fileTransfer.receiveFile();
@@ -85,12 +84,5 @@ public class RMIClient {
 
 
     }
-
-    private void sendFile(FileTransfer fileTransfer) {
-
-    }
-
-
-
 
 }

@@ -9,5 +9,6 @@ public class RunClient {
     public static void main(String[] args) throws RemoteException, NotBoundException {
         RMIClient client = new RMIClient();
         client.startClient();
+
     }
 }

@@ -16,9 +16,7 @@ public class RunServer {
         Registry registry = LocateRegistry.createRegistry(1099);
         registry.rebind(FileServer.class.getName(), server);
 
-        /*FileTransfer transfer = new ServerImplementation();
-        registry.rebind(FileTransfer.class.getName(), transfer);
-        */
+
         System.out.println("Server Started");
     }
 
