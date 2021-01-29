@@ -68,7 +68,9 @@ public class RMIClient {
                         new ReceiveFile(fileTransfer);
                         break;
                     case "4":
-                        //fileTransfer.deleteFile();
+                    //    new DeleteFiles(fileTransfer,listFiles(fileTransfer));
+                        iP = DeleteFiles.getIP();
+                        port = DeleteFiles.getPort();
                         break;
                     case "5":
                         break loop;

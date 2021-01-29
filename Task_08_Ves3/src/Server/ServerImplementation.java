@@ -46,7 +46,15 @@ public class ServerImplementation extends UnicastRemoteObject implements FileSer
 
     @Override
     public boolean deleteFile(String name) throws RemoteException {
-        return false;
+        speicher.remove(name);
+        if(speicher.get(name) == null){
+            return true;
+        }
+        else {
+            return false;
+        }
+
+
     }
 
 
