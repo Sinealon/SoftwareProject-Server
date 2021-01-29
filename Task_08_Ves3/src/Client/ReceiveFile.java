@@ -15,9 +15,9 @@ public class ReceiveFile {
 
         try {
             var byteData = fileTransfer.receiveFile(name);
-            if(byteData.length != 0) {
+            if(byteData != null) {
                 var result = burrowsWheelerRetransform(byteData);
-                System.out.println(result);
+                System.out.println("\nDer Inhalt des Textes ist: \n"+ result + "\n");
             }
             else{
                 System.out.println("Kein Text gefunden");
@@ -88,37 +88,27 @@ public class ReceiveFile {
             }
         }
 
+        List<Byte> ascii = new ArrayList<>();
 
-        var gefundenliste = new LinkedList<Short>();
-        byte [] ergebniss = new byte[input.length];
+        for (int c=0; c<128; c++) {
+            ascii.add((byte) c);
+        }
 
-
-
-        index: for(int i = 0;i<input.length;i++){
-            int zuverschieben = 0;
-            for (int k = 0; k<gefundenliste.size();k++){
-                if(input[i]<gefundenliste.size()){
-                    ergebniss[i] = gefundenliste.get(input[i]).byteValue();
-                    short speicher = gefundenliste.get(input[i]);
-                    gefundenliste.remove(input[i]);
-                    gefundenliste.addFirst(speicher);
-                    continue index;
-                }else if(gefundenliste.get(k)>=input[i]){
-                    zuverschieben++;
-                }
-            }
-            ergebniss[i] = (byte) (input[i]-zuverschieben);
-            gefundenliste.addFirst((short) (input[i]-zuverschieben));
+        byte[] result = new byte[input.length];
+        for (int i = 0; i < input.length; i++){
+            result[i] = ascii.get(input[i]);
+            ascii.add(0, ascii.get(input[i]));
+            ascii.remove(input[i] + 1);
         }
 
 
         for(int i = 0;i<input.length;i++) {
             if (vorzeichenWechsel[i]) {
-                ergebniss[i] = (byte) (ergebniss[i]*-1);
+                result[i] = (byte) (result[i]*-1);
             }
         }
 
-        return new String(ergebniss);
+        return new String(result);
     }
 
     private short[] runLengthRetransform(byte[] input){
