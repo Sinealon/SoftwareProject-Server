@@ -28,7 +28,7 @@ public class ReceiveFile {
     }
 
     private String burrowsWheelerRetransform(byte[] byteData) {
-        var huffmen = new HuffmanTree(HuffmanDistribution.getDistribution(byteData)).decode(byteData);
+        var huffmen = new HuffmanTree(HuffmanDistribution.getDistribution()).decode(byteData);
         var runLength = runLengthRetransform(huffmen);
         String moveToFront = moveToFrontRetransform(runLength);
 
@@ -80,8 +80,18 @@ public class ReceiveFile {
 
     private String moveToFrontRetransform(short[] input){
 
+        boolean [] vorzeichenWechsel = new boolean[input.length];
+        for(int i = 0;i<input.length;i++) {
+            if (input[i] < 0) {
+                vorzeichenWechsel[i] = true;
+                input[i] = (byte) (input[i]*-1);
+            }
+        }
+
+
         var gefundenliste = new LinkedList<Short>();
         byte [] ergebniss = new byte[input.length];
+
 
 
         index: for(int i = 0;i<input.length;i++){
@@ -100,6 +110,14 @@ public class ReceiveFile {
             ergebniss[i] = (byte) (input[i]-zuverschieben);
             gefundenliste.addFirst((short) (input[i]-zuverschieben));
         }
+
+
+        for(int i = 0;i<input.length;i++) {
+            if (vorzeichenWechsel[i]) {
+                ergebniss[i] = (byte) (ergebniss[i]*-1);
+            }
+        }
+
         return new String(ergebniss);
     }
 
@@ -112,7 +130,7 @@ public class ReceiveFile {
         int nullCounter = 0;
         short bit = 1;
         for (short input2:input) {
-            if(input2>1){
+            if(input2!=1 && input2!= 0){
                 while(nullCounter>0){
                     ergebniss.add((short)0);
                     nullCounter--;

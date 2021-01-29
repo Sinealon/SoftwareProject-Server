@@ -1,6 +1,8 @@
 package Client;
 
 import SharedInterface.FileTransfer;
+
+import java.nio.charset.StandardCharsets;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -56,19 +58,24 @@ public class SendFile {
 
 
     private short[] moveToFrontTransform(String komprimiren) {
+        byte[] input = komprimiren.getBytes(StandardCharsets.UTF_8);
+        boolean [] vorzeichenWechsel = new boolean[input.length];
+        for(int i = 0;i<input.length;i++) {
+            if (input[i] < 0) {
+                vorzeichenWechsel[i] = true;
+                input[i] = (byte) (input[i]*-1);
+            }
+        }
 
-        byte[] input = komprimiren.getBytes();
         var gefundenliste = new LinkedList<Byte>();
-        short[] ergebnisAtFront = new short[input.length];
-
+        short [] ergebniss = new short[input.length];
         //i = index des zu durschreitenden byte aus input
         index: for(int i = 0;i<input.length;i++){
             short zuverschieben = 0;
-
             // überprüfung ob bereits aufgetreten
             for (short k = 0;k<gefundenliste.size();k++){
                 if(gefundenliste.get(k).byteValue() == input[i]){
-                    ergebnisAtFront[i] = k;
+                    ergebniss[i] = k;
                     byte speicher = gefundenliste.get(k);
                     gefundenliste.remove(k);
                     gefundenliste.addFirst(speicher);
@@ -77,13 +84,19 @@ public class SendFile {
                     zuverschieben++;
                 }
             }
-
             //fügt bei nochnicht gefundenen hinzu
-            ergebnisAtFront[i] =(short)(input[i]+zuverschieben);
+            ergebniss[i] =(short)(input[i]+zuverschieben);
             gefundenliste.addFirst(input[i]);
         }
 
-        return ergebnisAtFront;
+        for(int i = 0;i<input.length;i++) {
+            if (vorzeichenWechsel[i]) {
+                ergebniss[i] = (byte) (ergebniss[i]*-1);
+            }
+        }
+
+
+        return ergebniss;
     }
 
 
@@ -92,22 +105,23 @@ public class SendFile {
         final int RLEB = 1;
         var ergebniss = new LinkedList<Byte>();
         int nullCounter = 0;
-        for (short input2 : input) {
-            if (input2 > 0) {
-                while (nullCounter > 0) {
-                    if (nullCounter % 2 == 1) {
+        for (short input2:input) {
+            if(input2!=0){
+                while(nullCounter>0){
+                    if(nullCounter%2 == 1){
                         ergebniss.add((byte) RLEA);
-                    } else {
+                    }else{
                         ergebniss.add((byte) RLEB);
                     }
                     nullCounter--;
-                    nullCounter /= 2;
+                    nullCounter/=2;
                 }
-                ergebniss.add((byte) (input2 + 1));
-            } else {
+                ergebniss.add((byte)(input2+1));
+            }else{
                 nullCounter++;
             }
         }
+
         byte[] ergebnissArray = new byte[ergebniss.size()];
         for (int i = 0; i < ergebniss.size(); i++) {
             ergebnissArray[i] = ergebniss.get(i);
@@ -116,7 +130,7 @@ public class SendFile {
     }
 
     public static byte[] HuffmenTransform(byte [] input) {
-        return new HuffmanTree(HuffmanDistribution.getDistribution(input)).encode(input);
+        return new HuffmanTree(HuffmanDistribution.getDistribution()).encode(input);
     }
 
 
