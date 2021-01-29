@@ -25,6 +25,14 @@ public class AtFront {
         101 = e => enab...........cdefghijklmopqrstuvwxyz
         */
 
+        boolean [] vorzeichenWechsel = new boolean[input.length];
+        for(int i = 0;i<input.length;i++) {
+            if (input[i] < 0) {
+                vorzeichenWechsel[i] = true;
+                input[i] = (byte) (input[i]*-1);
+            }
+        }
+	
         var gefundenliste = new LinkedList<Byte>();
         short [] ergebniss = new short[input.length];
         //i = index des zu durschreitenden byte aus input
@@ -46,6 +54,14 @@ public class AtFront {
             ergebniss[i] =(short)(input[i]+zuverschieben);
             gefundenliste.addFirst(input[i]);
         }
+
+        for(int i = 0;i<input.length;i++) {
+            if (vorzeichenWechsel[i]) {
+                ergebniss[i] = (byte) (ergebniss[i]*-1);
+            }
+        }
+
+
         return ergebniss;
 
     }
@@ -63,9 +79,20 @@ public class AtFront {
         1 = n => nab...........cdefghijklmopqrstuvwxyz
         101 = e => enab...........cdefghijklmopqrstuvwxyz
         */
+
+        boolean [] vorzeichenWechsel = new boolean[input.length];
+        for(int i = 0;i<input.length;i++) {
+            if (input[i] < 0) {
+                vorzeichenWechsel[i] = true;
+                input[i] = (byte) (input[i]*-1);
+            }
+        }
+
+	
         var gefundenliste = new LinkedList<Short>();
         byte [] ergebniss = new byte[input.length];
 
+	
 
         index: for(int i = 0;i<input.length;i++){
             int zuverschieben = 0;
@@ -83,6 +110,14 @@ public class AtFront {
             ergebniss[i] = (byte) (input[i]-zuverschieben);
             gefundenliste.addFirst((short) (input[i]-zuverschieben));
         }
+
+
+        for(int i = 0;i<input.length;i++) {
+            if (vorzeichenWechsel[i]) {
+                ergebniss[i] = (byte) (ergebniss[i]*-1);
+            }
+        }
+
         return ergebniss;
 
 
