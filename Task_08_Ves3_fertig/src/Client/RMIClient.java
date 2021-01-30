@@ -60,8 +60,12 @@ public class RMIClient {
                 switch (input){
                     case "1":
                         String [] liste = fileTransfer.listFiles("");
-                        for (String string : liste) {
-                            System.out.println(string);
+                        if(liste.length == 0){
+                            System.out.println("Noch keine Liste vorhanden.\n");
+                        } else{
+                            for (String string : liste) {
+                                System.out.println(string);
+                            }
                         }
                         break;
                     case "2":
@@ -74,7 +78,7 @@ public class RMIClient {
                         new DeleteFiles(fileTransfer);
                         break;
                     case "5":
-                        //Restet Der user,password,Ip und  Ports
+                        //Resetet Der user, password, Ip und Ports
                         user = null;
                         password = null;
                         iP = null;
