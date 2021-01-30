@@ -40,21 +40,19 @@ public class ServerImplementation extends UnicastRemoteObject implements FileSer
     @Override
     public byte[] receiveFile(String name) throws RemoteException {
         var data = speicher.get(name);
-        System.out.println(name+" Wurde ausgelesen");
+        System.out.println(name+" wurde ausgelesen");
         return data;
     }
 
     @Override
     public boolean deleteFile(String name) throws RemoteException {
-        speicher.remove(name);
-        if(speicher.get(name) == null){
-            return true;
+        if(speicher.get(name) != null){
+            speicher.remove(name);
+            if(speicher.get(name) == null){
+                return true;
+            }
         }
-        else {
-            return false;
-        }
-
-
+        return false;
     }
 
 

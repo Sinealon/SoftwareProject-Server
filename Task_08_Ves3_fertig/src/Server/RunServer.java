@@ -11,6 +11,7 @@ import java.rmi.registry.Registry;
 
 public class RunServer {
 
+    //Entwickelt von Luca Stanullo, Anton Popa, Philipp Hoss, Moritz Zucker
     public static void main(String[] args) throws RemoteException {
         FileServer server = new ServerImplementation();
         Registry registry = LocateRegistry.createRegistry(1099);

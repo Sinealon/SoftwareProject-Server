@@ -59,7 +59,6 @@ public class RMIClient {
                 String input = in.next();
                 switch (input){
                     case "1":
-                        
                         String [] liste = fileTransfer.listFiles("");
                         for (String string : liste) {
                             System.out.println(string);
@@ -72,11 +71,14 @@ public class RMIClient {
                         new ReceiveFile(fileTransfer);
                         break;
                     case "4":
-                    //    new DeleteFiles(fileTransfer,listFiles(fileTransfer));
-                        iP = DeleteFiles.getIP();
-                        port = DeleteFiles.getPort();
+                        new DeleteFiles(fileTransfer);
                         break;
                     case "5":
+                        //Restet Der user,password,Ip und  Ports
+                        user = null;
+                        password = null;
+                        iP = null;
+                        port = 0;
                         break loop;
                     default:
                         System.out.println("Bitte eine der genanten möglichkeiten Wählen.");
